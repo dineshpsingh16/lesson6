@@ -1,0 +1,20 @@
+182a183,201
+>   183  docker volume create --name mydata
+>   184  docker pull alpine
+>   185  docker run -ti --name client -v mydata:/mnt alpine /bin/sh
+>   186  ps -a
+>   187  docker ps -a
+>   188  docker rm client
+>   189  docker volume ls
+>   190  ls - ltr
+>   191  ls -ltr
+>   192  ls /var/lib/docker/
+>   193  sudo ls /var/lib/docker/
+>   194  sudo ls /var/lib/docker/volumes
+>   195  sudo ls /var/lib/docker/volumes/mydata
+>   196  sudo ls /var/lib/docker/volumes/mydata/_data
+>   197  sudo ls -ltr /var/lib/docker/volumes/mydata/_data
+>   198  docker rm -f $(docker ps -aq) .
+>   199  docker rmi $(docker images -q)
+>   200  docker volume rm $(docker volume ls -q)
+>   201  history > stets2.txt 

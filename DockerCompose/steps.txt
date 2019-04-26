@@ -1,0 +1,13 @@
+73a74,85
+>    74  ls -ltr
+>    75  ~/bin/docker-compose up -d 
+>    76  docker images
+>    77  ~/bin/docker-compose up -d 
+>    78  mkdir sshd
+>    79  ~/bin/docker-compose up -d 
+>    80  ~/bin/docker-compose ps
+>    81  ssh -p 2222 student@localhost
+>    82  ~/bin/docker-compose ps
+>    83  ~/bin/docker-compose down
+>    84  ~/bin/docker-compose ps
+>    85  history > steps2.txt

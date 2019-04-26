@@ -1,0 +1,22 @@
+151a152,172
+>   152  docker pull registry:2
+>   153  docker run -d -p 5000:5000 --restart=always --name registry registry:2
+>   154  docker ps -a
+>   155  docker pull ubuntu
+>   156  docker tag ubuntu localhost:5000/ubuntu
+>   157  docker push localhost:5000/Ubuntu
+>   158  docker push localhost:5000/ubuntu
+>   159  docker images
+>   160  docker rmi ubuntu
+>   161  docker images
+>   162  docker pull localhost:5000/ubuntu
+>   163  docker images
+>   164  docker rmi ubuntu
+>   165  docker images
+>   166  docker run -it --rm localhost:5000/ubuntu /bin/bash
+>   167  docker ps -aq
+>   168  docker rm -f $(docker ps -aq)
+>   169  docker images -q
+>   170  docker rmi $(docker images -q)
+>   171  pwd
+>   172  history > step2.txt 

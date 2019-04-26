@@ -1,0 +1,10 @@
+209a210,218
+>   210  docker build -t centos-net .
+>   211  docker images
+>   212  docker rm centos
+>   213  docker network create exnet
+>   214  docker network ls
+>   215  docker network inspect exnet
+>   216  docker run -it --rm --network exnet centos-net /bin/bash
+>   217  docker run -it --rm --name centos centos-net /bin/bash
+>   218  history > steps2.txt 

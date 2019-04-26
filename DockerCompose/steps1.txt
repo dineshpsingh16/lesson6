@@ -1,0 +1,224 @@
+    1  ./autorun.sh 
+    2  sudo cp devops/backup/presetup.txt .
+    3  sudo chown dinesh:dinesh presetup.txt 
+    4  vi presetup.txt 
+    5  ./presetup.txt 
+    6  kubeadm -version
+    7  sudo systemctl start jenkins
+    8  sudo systemctl status jenkins
+    9  docker
+   10  docker images
+   11  sudo reboot
+   12  emctl --type=service
+   13  ststemctl --type=service
+   14  sysctl
+   15  sysctl --type=service
+   16  sysctl 
+   17  systemctl
+   18  systemctl --type=service
+   19  systemctl status jenkins.service
+   20  systemctl stop jenkins.service
+   21  systemctl status apache2.service
+   22  systemctl stop apache2.service
+   23  wget wgetio.com
+   24  wget wgetip.com
+   25  cat index.html 
+   26  pwd
+   27  cd lesson5
+   28  ls -l
+   29  ansible-playbook mysql.yaml 
+   30  ansible -m shell -a "service mysql status" webservers
+   31  pwd
+   32  ls -l
+   33  history > old2.txt 
+   34  ls -ltr
+   35  docker network create puppet
+   36  docker network ls
+   37  docker pull puppet/puppetserver-standalone
+   38  docker pull puppet/puppet-agent-alpine
+   39  docker images
+   40  docker run --net puppet -d --name puppetserver --hostname puppet puppet/puppetserver-standalone
+   41  docker ps
+   42  docker logs puppetserver
+   43  docker run --rm --net puppet --link=puppetserver:puppet puppet/puppet-agent-alpine
+   44  docker run --rm --net puppet --link=puppetserver:puppet puppet/puppet-agent-alpine resource package
+   45  docker rm -f puppetserver
+   46  docker ps
+   47  docker pa -a
+   48  docker ps -a
+   49  wget https://packages.chef.io/files/stable/chef-server/12.18.14/ubuntu/16.04/chef-server-core_12.18.14-1_amd64.deb -O chef-server-core_12.10.14-1_amd64.deb
+   50  sudo dpkg -i chef-server-core_12.10.14-1_amd64.deb
+   51  sudo chef-server-ctl reconfigure
+   52  sudo curl -L https://www.opscode.com/chef/install.sh | sudo bash
+   53  chef-client -v
+   54  sudo chef-server-ctl install chef-manage
+   55  chef-manage-ctl reconfigure –accept-license
+   56  sudo chef-server-ctl reconfigure
+   57  mail
+   58  docker ps
+   59  docker ps -a
+   60  sudo dpkg -i chef-server-core_12.10.14-1_amd64.deb
+   61  sudo chef-server-ctl reconfigure
+   62  sudo curl -L https://www.opscode.com/chef/install.sh | sudo bash
+   63  chef-client -v
+   64  sudo chef-server-ctl install chef-manage
+   65  chef-manage-ctl reconfigure –accept-license
+   66  sudo chef-server-ctl reconfigure
+   67  sudo reboot
+   68  ls -ltr
+   69  cd lesson6
+   70  l -l
+   71  docker imsgaes
+   72  docker images
+   73  docker ps -a
+   74  docker inspect mysql
+   75  mysql –h 172.17.0.2 –u student –p monitoring
+   76  pwd
+   77  cd DockerWithMySQL/
+   78  ls -l
+   79  vi runclient 
+   80  ./runclient 
+   81  docker ps -a
+   82  docker stop 2542806afd01
+   83  docker rm 2542806afd01
+   84  docker ps -a
+   85  docker images
+   86  ls -l
+   87  vi runserver_first
+   88  docker images
+   89  docker rmi mysql5.7
+   90  docker rmi mysql:5.7
+   91  docker rmi mysql:latest
+   92  docker images
+   93  docker volume ls
+   94  pwd
+   95  ls -l
+   96  cd sql/
+   97  ls -l
+   98  vi docker.sql 
+   99  pwd
+  100  ls -l
+  101  cd ..
+  102  pwd
+  103  ls -l
+  104  vi README.md 
+  105  vi runserver_first
+  106  ./runserver_first
+  107  /etc/init.d/mysql stop
+  108  docke ps -a
+  109  docker ps -a
+  110  docker stop ea3974d301fc
+  111  docker rm ea3974d301fc
+  112  docker images
+  113  ./runserver_first
+  114  ./runclient 
+  115  docker ps -a
+  116  docker stop mysql
+  117  docker rm mysql
+  118  docker ps -a
+  119  docker images
+  120  pwd
+  121  /etc/init.d/mysql status
+  122  /etc/init.d/mysql stop
+  123  /etc/init.d/mysql status
+  124  /etc/init.d/mysql stop
+  125  mysql
+  126  pwd
+  127  ls -ltr
+  128  vi runserver_first
+  129  docker ps -a
+  130  cat runserver_first
+  131  ./runserver_first
+  132  docker logs mysql
+  133  docker inspect mysql
+  134  ./runclient 
+  135  docker inspect mysql
+  136  mysql
+  137  docker ps -a
+  138  mysql -h 0.0.0.0 
+  139  mysql -h 0.0.0.0 -u root
+  140  mysql -h 0.0.0.0 -u root -p
+  141  vi runserver_first
+  142  mysql -h 0.0.0.0 -u root -p
+  143  ./runclient 
+  144  pwd
+  145  ls -l
+  146  cd ..
+  147  pwd
+  148  ls -l
+  149  mkdir DockerRegistry
+  150  cd DockerRegistry/
+  151  history > step1.txt
+  152  docker pull registry:2
+  153  docker run -d -p 5000:5000 --restart=always --name registry registry:2
+  154  docker ps -a
+  155  docker pull ubuntu
+  156  docker tag ubuntu localhost:5000/ubuntu
+  157  docker push localhost:5000/Ubuntu
+  158  docker push localhost:5000/ubuntu
+  159  docker images
+  160  docker rmi ubuntu
+  161  docker images
+  162  docker pull localhost:5000/ubuntu
+  163  docker images
+  164  docker rmi ubuntu
+  165  docker images
+  166  docker run -it --rm localhost:5000/ubuntu /bin/bash
+  167  docker ps -aq
+  168  docker rm -f $(docker ps -aq)
+  169  docker images -q
+  170  docker rmi $(docker images -q)
+  171  pwd
+  172  history > step2.txt 
+  173  diff step1.txt step2.txt > steps.txt
+  174  vi steps.txt 
+  175  pwd
+  176  cd ..
+  177  pwd
+  178  ls -lrt
+  179  mkdir DOckerVolume
+  180  mv DOckerVolume/ DockerVolume/
+  181  cd DockerVolume/
+  182  history > stets1.txt
+  183  docker volume create --name mydata
+  184  docker pull alpine
+  185  docker run -ti --name client -v mydata:/mnt alpine /bin/sh
+  186  ps -a
+  187  docker ps -a
+  188  docker rm client
+  189  docker volume ls
+  190  ls - ltr
+  191  ls -ltr
+  192  ls /var/lib/docker/
+  193  sudo ls /var/lib/docker/
+  194  sudo ls /var/lib/docker/volumes
+  195  sudo ls /var/lib/docker/volumes/mydata
+  196  sudo ls /var/lib/docker/volumes/mydata/_data
+  197  sudo ls -ltr /var/lib/docker/volumes/mydata/_data
+  198  docker rm -f $(docker ps -aq) .
+  199  docker rmi $(docker images -q)
+  200  docker volume rm $(docker volume ls -q)
+  201  history > stets2.txt 
+  202  diff stets1.txt stets2.txt > stets.txt
+  203  vi stets.txt 
+  204  cd ..
+  205  pwd
+  206  mkdir DockerNetwork
+  207  cd DockerNetwork/
+  208  vi Dockerfile
+  209  history > steps1.txt
+  210  docker build -t centos-net .
+  211  docker images
+  212  docker rm centos
+  213  docker network create exnet
+  214  docker network ls
+  215  docker network inspect exnet
+  216  docker run -it --rm --network exnet centos-net /bin/bash
+  217  docker run -it --rm --name centos centos-net /bin/bash
+  218  history > steps2.txt 
+  219  diff steps1.txt steps2.txt >  steps.txt
+  220  pwd
+  221  cd ..
+  222  mkdir DockerCompose
+  223  cd DockerCompose/
+  224  history > steps1.txt

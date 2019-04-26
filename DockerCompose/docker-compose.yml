@@ -1,0 +1,8 @@
+--- 
+services: 
+  sshd: 
+    build: sshd
+    image: "centos-sshd:latest"
+    ports: 
+        - "2222:22"
+version: "2"
